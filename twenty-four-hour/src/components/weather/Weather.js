@@ -1,32 +1,44 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
+import WeatherResult from './WeatherResult'
 
+const OpenWeather = (props) => {
 
-const Weather = (props) => {
+    
+    const [result, setResult] = useState({});
 
-    //const [result, setResult] = useState([])
+    // let url = 'https://randomuser.me/api/'
 
-    const key = 'afbbc4307952a67728f72bcec865d932';
-    let city = 'indianapolis'
+    const key = '8d98acf691039a289253daf08a562f83';
+    let lat = props.latitude;
+    let lon = props.longitude;
+    
+    
+    let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}`;
+    const fetchResult = () => {
 
-    // const FetchWeather = () => {}
-
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}`;
-
+    
     fetch (url)
         .then(res => res.json())
         .then(json => {
-            //setResult(json);
-            console.log(json)
-        }).catch(err => console.log(err))
-
+           setResult(json);
+            // console.log(json);
+            // console.log(url);
+        });
+}
+    useEffect (() => { 
+        fetchResult();
+    }, [])
+    
+    //console.log(result);
+    console.log(lat, lon);
 
     return (
         <div className="main">
             <h1>weather</h1>
-            {/* <FetchWeather /> */}
+            <WeatherResult result={result} />
         </div>
     )
 }
 
-export default Weather;
+export default OpenWeather;
