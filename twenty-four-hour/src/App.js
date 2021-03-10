@@ -59,7 +59,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className="h1">Weather and Satellite Image</h1>
+      <h1 className="h1">Weather and Satellite Image of your current location</h1>
       {console.log(locationDataFound)}
       {console.log(geolocationAvailable)}
       {locationDataFound ? (
