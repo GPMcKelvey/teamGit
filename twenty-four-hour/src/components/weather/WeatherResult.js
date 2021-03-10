@@ -36,9 +36,9 @@ const WeatherResult = (props) => {
                     return(
                         
                 <ListGroup>
-                    <ListGroupItemHeading>Weather for your area!</ListGroupItemHeading>
+                    <ListGroupItemHeading>Today's Weather</ListGroupItemHeading>
                     <ListGroupItem>{r.weather[0].description}</ListGroupItem>
-                    <ListGroupItem>Relative Humidity: {r.main.humidity}</ListGroupItem>
+                    <ListGroupItem>Relative Humidity: {r.main.humidity}%</ListGroupItem>
                     <ListGroupItem>Current Temperature: {toggle ? `${temp} F` : `${tempC} C`} </ListGroupItem>
                     <ListGroupItem>Maximum Temperature: {toggle ? `${maxTemp} F` : `${maxTempC} C`} </ListGroupItem>
                     <ListGroupItem>Minimum Temperature: {toggle ? `${minTemp} F` : `${minTempC} C`} </ListGroupItem>

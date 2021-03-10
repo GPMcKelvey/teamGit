@@ -28,6 +28,7 @@ const NASA = (props) => {
   return (
     <Col className="p-2" md="auto">
       <img className="locImg" src={NASAData} alt="map of your area" />
+      <h5>Image courtesy of NASA</h5>
     </Col>
   );
 };
