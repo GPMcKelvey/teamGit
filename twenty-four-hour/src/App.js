@@ -6,6 +6,8 @@ import OpenWeather from "./components/weather/Weather";
 import Zomato from "./components/zomato/Zomato";
 import "./App.css";
 
+
+
 function App() {
   const [latitude, setLatitude] = useState("");
   const [longitude, setLongitude] = useState("");
@@ -18,7 +20,7 @@ function App() {
 
   const geoLocation = () => {
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(showPosition);
+      navigator.geolocation.watchPosition(showPosition);
     } else {
       console.log("Geolocation is not supported by this browser.");
       setGeolocationAvailable(false);
@@ -32,20 +34,24 @@ function App() {
 
   useEffect(() => {
     if (latitude && longitude) {
-      console.log("Latitude:", latitude, "Longitude:", longitude);
       setLocationDataFound(true);
+      console.log("Latitude:", latitude, "Longitude:", longitude);
     }
   }, [latitude, longitude]);
 
   const locationComponents = () => {
     return (
       <Container>
-        <Row className="justify-content-center">
-          {/* <OpenWeather latitude={latitude} longitude={longitude} /> */}
+        <Row>
+        <Col md= "3">
+          <OpenWeather latitude={latitude} longitude={longitude} />
+        </Col>
+        <Col md= "9">
           <NASA latitude={latitude} longitude={longitude} />
-        </Row>
-        <Row className="justify-content-center">
-          {/* <Zomato latitude={latitude} longitude={longitude} /> */}
+        </Col>
+        {/* <Col className="justify-content-center">
+          <Zomato latitude={latitude} longitude={longitude} />
+        </Col> */}
         </Row>
       </Container>
     );
@@ -61,6 +67,7 @@ function App() {
       ) : (
         <h2>Geolocation is not supported by this browser.</h2>
       )}
+      
     </div>
   );
 }
