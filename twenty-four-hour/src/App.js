@@ -34,8 +34,8 @@ function App() {
 
   useEffect(() => {
     if (latitude && longitude) {
-      setLocationDataFound(true);
       console.log("Latitude:", latitude, "Longitude:", longitude);
+      setLocationDataFound(true);
     }
   }, [latitude, longitude]);
 
