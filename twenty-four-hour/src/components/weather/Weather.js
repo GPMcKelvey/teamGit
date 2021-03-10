@@ -17,13 +17,13 @@ const OpenWeather = (props) => {
     console.log(url);
 
     const fetchResult = async () => {
-        await fetch (url)
+       try{ await fetch (url)
         .then(res => res.json())
         .then(json => {
             setResult(json);
             //console.log(json);
             //console.log(url);
-            })
+            })}catch (error){ console.log(error)}
     };
 
     useEffect (() => { 
