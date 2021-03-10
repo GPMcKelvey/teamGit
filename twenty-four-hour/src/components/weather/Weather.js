@@ -41,7 +41,6 @@ const OpenWeather = (props) => {
 
     return (
         <div>
-            weather
             {display ? <WeatherResult result= {result}/> : null} 
         </div>
     )

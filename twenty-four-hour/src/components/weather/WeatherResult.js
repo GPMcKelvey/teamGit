@@ -11,7 +11,6 @@ const WeatherResult = (props) => {
 
     return (
         <div>
-            weather results
             {
                 props.result.map(r=>{ 
                     let temp = Math.floor((r.main.temp - 273.15)*(9/5)+32);
