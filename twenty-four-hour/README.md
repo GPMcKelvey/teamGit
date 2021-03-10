@@ -1,3 +1,17 @@
+Reflection - 
+The last 24 hours has been a struggle. React is powerful tool that involves a lot of functionality. This makes it incredibly useful but difficult to understand at times due to the multiple layers within an app. We have learned a lot about it's abilities and how to implement them. The .map() method proved to be invaluable. Understanding the flow of data through the working tree is essential. 
+This was also a great exercise in teamGit and agile development. Laying out a clear plan and then following through was the key to success.
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
