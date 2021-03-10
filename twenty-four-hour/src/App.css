@@ -1,0 +1,13 @@
+body {
+  text-align: center;
+  background-color: rgba(218, 218, 224, 0.966);
+}
+
+
+.h1 {
+  padding: 1em;
+}
+
+.App{
+  padding-bottom: 1em;
+}
